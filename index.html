@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+
+</html>
+<html>
+
+
+<head>
+    <title>Bildbearbeitung</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!--IconLibrary-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="author" content="Photoshop Phillip">
+    <meta name="description" content="Seriöse Bildbearbeitung">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+</head>
+
+
+
+<body>
+    <div class="index">
+
+        <div class="layout">
+            <div class="options">
+
+                <div class="dateiuploadandhelp">
+                    <label>
+                            <input type="file" id="imageLoader" name="imageLoader"/>
+                            <i value="&#xf15b" class="fa fa-file"></i>
+                            Datei auswählen...
+                        </label>
+                </div>
+
+                <input type="button" id="helpButton" value="&#xf059" class="fa fa-question-circle" />
+
+                <div>
+                    <input type="button" id="refreshButton" value="&#xf021" class="fa fa-refresh" />
+                    <a id="downloadLink" download="Bild.png"><input type="button" value="&#xf019" class="fa fa-refresh" id="save"></a>
+                    <span class="helpText">
+                        1. Setze das Bild zurück   2. Lade das Bild herunter
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Graustufe" id="buttongraustufen">
+                    <span class="helpText">
+                        Wandelt das Bild in eine Graustufenbild um.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Schwarz Weiß" id="togglesliderforbw">
+                    <span class="helpText">
+                        Wandelt das Bild in Schwarz/Weiß.
+                    </span>
+                    <div id="sliderforbw">
+                        <input class="slider" type="range" min="0" max="225" value="0" id="blackslider">
+                        <span class="helpText">
+                            Stellt den Schwellwert ein.
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="button" value="Aufhellen" id="togglesliderforbrightening">
+                    <span class="helpText">
+                        Hellt das Bild auf.
+                    </span>
+                    <div id="sliderforbrightening">
+                        <input type="range" min="-200" max="200" value="0" class="slider" id="sliderforbrightening_a">
+                        <span class="helpText">
+                            Legt die Intensität fest.
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="button" value="Kontrast" id="togglesliderforcontrast">
+                    <span class="helpText">
+                        Stellt den Kontrast des Bildes ein.
+                    </span>
+                    <div id="sliderforcontrast">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="sliderforcontrast_a">
+                        <span class="helpText">
+                            Definiert die Stärke.
+                        </span>
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <input type="button" value="RGB Werte ändern" id="toggleslidersforRGBmanipulation">
+                    <span class="helpText">
+                        Stärkt die verschiedenen Farbkanäle.
+                    </span>
+                    <div id="slidersforRGBmanipulation">
+                        <input type="range" min="1" max="100" value="10" class="slider" id="slidersforRGBmanipulation_r">
+                        <span class="helpText">
+                            Stärkt Rot.
+                        </span>
+                        <input type="range" min="1" max="100" value="10" class="slider" id="slidersforRGBmanipulation_g">
+                        <span class="helpText">
+                            Stärkt Grün.
+                        </span>
+                        <input type="range" min="1" max="100" value="10" class="slider" id="slidersforRGBmanipulation_b">
+                        <span class="helpText">
+                            Stärkt Blau.
+                        </span>
+                    </div>
+                </div>
+
+
+                <div>
+                    <input type="button" value="Farben invertieren" id="colorinvertbutton">
+                    <span class="helpText">
+                        Setzt jede Farbe auf ihre Umkehrfarbe.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Roatation" id="togglesliderforrotation">
+                    <span class="helpText">
+                        Rotiert das Bild.
+                    </span>
+                    <div id="sliderforrotation">
+                        <input type="range" min="1" max="30" value="3" class="slider" id="sliderforrotation_a">
+                        <span class="helpText">
+                            Winkel der Rotation.
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="button" value="Vertikal Spiegeln" id="mirrorVerticalButton">
+                    <span class="helpText">
+                        Spiegelt vertikal.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Horizontal Spiegeln" id="mirrorHorizontalButton">
+                    <span class="helpText">
+                        Spiegelt horizontal.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Halbe Größe" id="scaleHalfButton">
+                    <span class="helpText">
+                        Halbiert die Größe des Bildes.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Doppelte Größe" id="scaleDoubleButton">
+                    <span class="helpText">
+                        Verdoppelt die Größe des Bildes.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Einfacher Rauschfilter" id="rauschFilterButton">
+                    <span class="helpText">
+                        Weichzeichner.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Gauß 3x3" id="rauschFilter3x3Button">
+                    <span class="helpText">
+                        Gauß 3x3 Weichzeichner.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Gauß 5x5" id="rauschFilter5x5Button">
+                    <span class="helpText">
+                        Gauß 5x5 Weichzeichner.
+                    </span>
+                </div>
+
+                <div>
+                    <input type="button" value="Kantenerkennung" id="toggleedge">
+                    <span class="helpText">
+                        Erkennt Kanten im Bild.
+                    </span>
+                    <div id="edgeslider">
+                        <input type="range" min="1" max="255" value="150" class="slider" id="edgeslider_a">
+                        <span class="helpText">
+                            Stellt den Schwellwertein.
+                        </span>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="picedit">
+                <canvas id="leinwand"></canvas>
+            </div>
+
+            <div>
+                <div>
+                    <span class="helpText">
+                        Stellt die Häufigkeit der verschiedenen Farben graphisch dar.
+                    </span>
+                    <canvas id="histogramm_r"></canvas>
+                    <canvas id="histogramm_g"></canvas>
+                    <canvas id="histogramm_b"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="pic_logic.js"></script>
+    <script type="text/javascript" src="bildbearbeitung.js"></script>
+</body>
+
+</html>

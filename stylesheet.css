@@ -1,0 +1,88 @@
+@import "sliders.css";
+body {
+    padding: 10px;
+    background-color: #1d1d1d;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow: hidden;
+}
+
+
+/*
+canvas {
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+}
+*/
+
+input[type="file"] {
+    display: none;
+}
+
+.dateiuploadandhelp {
+    margin-bottom: 20px;
+}
+
+.dateiuploadandhelp label {
+    border: solid;
+    padding: 10px 27px;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(1, 194, 201);
+}
+
+.dateiuploadandhelp label:hover {
+    cursor: pointer;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;
+}
+
+.picCanvas {
+    background-color: wheat;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.options div input {
+    background-color: rgb(1, 194, 201);
+    font-size: 17px;
+    border-radius: 10px;
+    border: none;
+    color: #1d1d1d;
+    padding: 10px 27px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.options input {
+    padding-bottom: 20px;
+}
+
+.layout .picedit {
+    text-align: center;
+    display: block;
+}
+
+.layout .picedit canvas {
+    width: auto;
+    height: 90%;
+    max-height: 100vh;
+}
+
+#helpButton {
+    border-width: 0px;
+    background-color: transparent;
+    color: white;
+    position: absolute;
+    font-size: 30px;
+    bottom: 0%;
+}
+
+#helpButton:hover {
+    cursor: pointer;
+}
